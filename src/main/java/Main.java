@@ -11,9 +11,9 @@ public class Main {
         Boolean isChecked = false;
         // Create a loop to check someone in or out of restaurant
         try (Scanner obj = new Scanner(System.in)) {
-            System.out.println("Do you want to check in? ");
+            System.out.println("Are you checking in or out? ");
             String status = obj.nextLine();
-            if(status.equalsIgnoreCase("yes")){
+            if(status.equalsIgnoreCase("in")){
                 isChecked = true;
                 System.out.println("Welcome to our restaurant! ");
                 System.out.println("How many people will be joining us? ");
@@ -26,7 +26,7 @@ public class Main {
                  isChecked = false;
                 } else {
                         System.out.println("Unfortuntely, all the tables are full ");
-                        System.out.println("We will now add you to our waiting list ");
+                        System.out.println("We will add you to our waiting list ");
                         Queue<Integer> waitingList = new LinkedList<Integer>();
                             for (Integer counter = 0; counter < 2; counter++) {
                             waitingList.add(counter);
@@ -39,6 +39,13 @@ public class Main {
                             System.out.print("We now have an available table!");
                         }
                         }
+            }
+            else {
+                isChecked = false;
+                System.out.println("Thank you for staying with us! ");
+                table = table + 1;
+                isAvailable = true;
+
             }
         }
         
